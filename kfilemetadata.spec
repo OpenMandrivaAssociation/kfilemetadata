@@ -69,3 +69,6 @@ based on %{name}.
 %install
 %makeinstall_std -C build
 
+%changelog
+* Wed Jun 11 2014 Andrey Bondrov <andrey.bondrov@rosalab.ru> 1:4.13.2-1
+- Initial Rosa package
