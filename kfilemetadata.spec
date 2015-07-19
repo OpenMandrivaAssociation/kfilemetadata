@@ -1,7 +1,7 @@
 Summary:	A KDE library for extracting file metadata
 Name:		kfilemetadata
 Version:	4.14.3
-Release:	3
+Release:	4
 License:	GPLv2+
 Group:		Graphical desktop/KDE
 Source0:	ftp://ftp.kde.org/pub/kde/stable/%{version}/src/%name-%{version}.tar.xz
