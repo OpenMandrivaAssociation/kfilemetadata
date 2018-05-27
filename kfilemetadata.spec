@@ -3,7 +3,7 @@
 %define devname %{mklibname KF5FileMetaData -d}
 
 Summary:	File metadata parsing library
-Name:		kfilemetadata5
+Name:		kfilemetadata
 Version:	5.46.0
 Release:	1
 License:	LGPL
