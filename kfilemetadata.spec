@@ -28,6 +28,7 @@ BuildRequires:	cmake(Gettext)
 BuildRequires:	ffmpeg-devel
 BuildRequires:	attr-devel
 Requires: %{libname} = %{EVRD}
+%rename %{name}5
 
 %dependinglibpackage KF5FileMetaData 5
 %{_libdir}/libKF5FileMetaData.so.3
