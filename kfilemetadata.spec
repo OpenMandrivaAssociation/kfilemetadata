@@ -24,6 +24,7 @@ BuildRequires:	pkgconfig(Qt5Test)
 BuildRequires:	pkgconfig(Qt5Xml)
 BuildRequires:	pkgconfig(Qt5Multimedia)
 BuildRequires:	pkgconfig(taglib)
+BuildRequires:	pkgconfig(libcurl)
 BuildRequires:	cmake(Gettext)
 BuildRequires:	ffmpeg-devel
 BuildRequires:	attr-devel
