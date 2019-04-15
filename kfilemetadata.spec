@@ -30,6 +30,7 @@ BuildRequires:	cmake(Gettext)
 BuildRequires:	ffmpeg-devel
 BuildRequires:	attr-devel
 # For QCH format docs
+BuildRequires: doxygen
 BuildRequires: qt5-assistant
 Requires: %{libname} = %{EVRD}
 %rename %{name}5
