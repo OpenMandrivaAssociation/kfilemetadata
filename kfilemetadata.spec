@@ -2,6 +2,10 @@
 %define libname %{mklibname KF5FileMetaData 5}
 %define devname %{mklibname KF5FileMetaData -d}
 
+# As of 2.32, libtiff 4.0.10-3, ld.bfd fails to link
+# anything to libtiff
+%global ldflags %{ldflags} -fuse-ld=lld
+
 Summary:	File metadata parsing library
 Name:		kfilemetadata
 Version:	5.59.0
@@ -29,6 +33,7 @@ BuildRequires:	pkgconfig(libssh)
 BuildRequires:	cmake(Gettext)
 BuildRequires:	ffmpeg-devel
 BuildRequires:	attr-devel
+BuildRequires:	lld
 # For QCH format docs
 BuildRequires: doxygen
 BuildRequires: qt5-assistant
