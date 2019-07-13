@@ -4,7 +4,7 @@
 
 Summary:	File metadata parsing library
 Name:		kfilemetadata
-Version:	5.59.0
+Version:	5.60.0
 Release:	1
 License:	LGPL
 Group:		Graphical desktop/KDE
@@ -48,7 +48,7 @@ File metadata parsing library.
 %dir %{_libdir}/qt5/plugins/kf5/kfilemetadata/writers
 %{_libdir}/qt5/plugins/kf5/kfilemetadata/kfilemetadata_*.so
 %{_libdir}/qt5/plugins/kf5/kfilemetadata/writers/kfilemetadata_*.so
-%{_sysconfdir}/xdg/kfilemetadata.categories
+%{_datadir}/qlogging-categories5/kfilemetadata.categories
 
 %package -n %{devname}
 Summary:	Development files for KFileMetaData
