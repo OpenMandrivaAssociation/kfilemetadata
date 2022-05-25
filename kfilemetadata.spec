@@ -16,6 +16,7 @@ BuildRequires:	cmake(KF5)
 BuildRequires:	cmake(KF5Archive)
 BuildRequires:	cmake(KF5I18n)
 BuildRequires:	cmake(KF5Service)
+BuildRequires:	cmake(QMobipocket)
 BuildRequires:	ebook-tools-devel
 BuildRequires:	pkgconfig(poppler-qt5)
 BuildRequires:	pkgconfig(exiv2)
@@ -80,7 +81,7 @@ Developer documentation for %{name} for use with Qt Assistant
 #----------------------------------------------------------------------------
 
 %prep
-%setup -q -n kfilemetadata-%{version}
+%autosetup -n kfilemetadata-%{version} -p1
 %cmake_kde5
 
 %build
