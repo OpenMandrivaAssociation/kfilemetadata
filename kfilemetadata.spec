@@ -1,10 +1,10 @@
 %define stable %([ "`echo %{version} |cut -d. -f3`" -ge 70 ] && echo -n un; echo -n stable)
-%define libname %{mklibname KF5FileMetaData 5}
+%define libname %{mklibname KF5FileMetaData}
 %define devname %{mklibname KF5FileMetaData -d}
 
 Summary:	File metadata parsing library
 Name:		kfilemetadata
-Version:	5.103.0
+Version:	5.104.0
 Release:	1
 License:	LGPL
 Group:		Graphical desktop/KDE
@@ -36,6 +36,7 @@ BuildRequires: doxygen
 BuildRequires: qt5-assistant
 Requires: %{libname} = %{EVRD}
 %rename %{name}5
+Obsoletes: %{mklibname KF5FileMetaData 5}
 
 %dependinglibpackage KF5FileMetaData 5
 %{_libdir}/libKF5FileMetaData.so.3
