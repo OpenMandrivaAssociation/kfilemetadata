@@ -5,12 +5,13 @@
 Summary:	File metadata parsing library
 Name:		kfilemetadata
 Version:	5.106.0
-Release:	1
+Release:	2
 License:	LGPL
 Group:		Graphical desktop/KDE
 Url:		http://kde.org/
 Source0:	http://download.kde.org/%{stable}/frameworks/%(echo %{version} |cut -d. -f1-2)/kfilemetadata-%{version}.tar.xz
 Source1000:	%{name}.rpmlintrc
+Patch0:		https://invent.kde.org/frameworks/kfilemetadata/-/merge_requests/96.patch
 BuildRequires:	cmake(ECM)
 BuildRequires:	cmake(KF5)
 BuildRequires:	cmake(KF5Archive)
