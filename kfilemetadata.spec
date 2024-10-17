@@ -8,7 +8,7 @@ Version:	5.116.0
 Release:	2
 License:	LGPL
 Group:		Graphical desktop/KDE
-Url:		http://kde.org/
+Url:		https://kde.org/
 Source0:	http://download.kde.org/%{stable}/frameworks/%(echo %{version} |cut -d. -f1-2)/kfilemetadata-%{version}.tar.xz
 Source1000:	%{name}.rpmlintrc
 BuildRequires:	cmake(ECM)
