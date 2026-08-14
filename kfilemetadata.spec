@@ -13,6 +13,7 @@ Source0:	http://download.kde.org/%{stable}/frameworks/%(echo %{version} |cut -d.
 Patch0:		kfilemetadata-5.116.0-ffmpeg9.patch
 Source1000:	%{name}.rpmlintrc
 BuildRequires:	cmake(ECM)
+BuildRequires:	extra-cmake-modules-plasma5
 BuildRequires:	cmake(KF5)
 BuildRequires:	cmake(KF5Archive)
 BuildRequires:	cmake(KF5I18n)
