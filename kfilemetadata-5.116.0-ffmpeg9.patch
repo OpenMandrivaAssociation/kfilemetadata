@@ -1,0 +1,53 @@
+--- kfilemetadata-5.116.0/src/extractors/ffmpegextractor.cpp
++++ kfilemetadata-5.116.0/src/extractors/ffmpegextractor.cpp
+@@ -59,21 +59,24 @@
+ {
+     AVFormatContext* fmt_ctx = nullptr;
+ 
+-#if LIBAVFORMAT_VERSION_MAJOR < 58
+-    av_register_all();
+-#endif
+-
+     QByteArray arr = result->inputUrl().toUtf8();
+ 
+     fmt_ctx = avformat_alloc_context();
++    if (!fmt_ctx) {
++        qCWarning(KFILEMETADATA_LOG) << "Failed to allocate format context";
++        return;
++    }
++
+     if (int ret = avformat_open_input(&fmt_ctx, arr.data(), nullptr, nullptr)) {
+         qCWarning(KFILEMETADATA_LOG) << "avformat_open_input error: " << ret;
++        // The AVFormatContext is freed on failure
+         return;
+     }
+ 
+     int ret = avformat_find_stream_info(fmt_ctx, nullptr);
+     if (ret < 0) {
+         qCWarning(KFILEMETADATA_LOG) << "avform_find_stream_info error: " << ret;
++        avformat_close_input(&fmt_ctx);
+         return;
+     }
+ 
+@@ -92,7 +95,8 @@
+ 
+             const AVCodecParameters* codec = stream->codecpar;
+ 
+-            if (codec->codec_type == AVMEDIA_TYPE_VIDEO) {
++            if (codec->codec_type == AVMEDIA_TYPE_VIDEO &&
++                !(stream->disposition & AV_DISPOSITION_ATTACHED_PIC)) {
+                 result->add(Property::Width, codec->width);
+                 result->add(Property::Height, codec->height);
+ 
+@@ -151,6 +155,11 @@
+             result->add(Property::Comment, QString::fromUtf8(entry->value));
+         }
+ 
++        entry = av_dict_get(dict, "artist", nullptr, 0);
++        if (entry) {
++            result->add(Property::Artist, QString::fromUtf8(entry->value));
++        }
++
+         entry = av_dict_get(dict, "album", nullptr, 0);
+         if (entry) {
+             result->add(Property::Album, QString::fromUtf8(entry->value));
