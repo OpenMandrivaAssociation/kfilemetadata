@@ -17,7 +17,7 @@ BuildRequires:	cmake(KF5)
 BuildRequires:	cmake(KF5Archive)
 BuildRequires:	cmake(KF5I18n)
 BuildRequires:	cmake(KF5Service)
-BuildRequires:	cmake(QMobipocket)
+# KF5 QMobipocket is gone; cooker only has Qt6 cmake(QMobipocket6)
 BuildRequires:	ebook-tools-devel
 BuildRequires:	pkgconfig(poppler-qt5)
 BuildRequires:	pkgconfig(exiv2)
